@@ -1,0 +1,32 @@
+Cut with keyframes:
+https://stackoverflow.com/questions/18444194/cutting-the-videos-based-on-start-and-end-time-using-ffmpeg
+ffmpeg -i original.mp4 -ss 00:00:03 -to 00:00:08 -async 1 -strict -2 cut.mp4
+
+
+
+?:
+https://www.arj.no/2018/05/18/trimvideo/
+ffmpeg -i input.mp4 -ss 01:10:27 -to 02:18:51 -c:v copy -c:a copy output.mp4
+
+
+
+Concat:
+https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
+
+
+
+Remove title:
+ffmpeg -i input.mp4 -metadata title="" -acodec copy -vcodec copy out.mp4
+
+
+
+Merge audio + video:
+https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4
+
+
+
+Quieter ffmpeg:
+https://superuser.com/questions/326629/how-can-i-make-ffmpeg-be-quieter-less-verbose
+-loglevel panic -hide_banner
+
