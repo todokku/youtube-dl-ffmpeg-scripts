@@ -10,6 +10,11 @@ ffmpeg -i input.mp4 -ss 01:10:27 -to 02:18:51 -c:v copy -c:a copy output.mp4
 
 
 
+Download part of the video:
+https://unix.stackexchange.com/questions/230481/how-to-download-portion-of-video-with-youtube-dl-command
+
+
+
 Concat:
 https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
 
