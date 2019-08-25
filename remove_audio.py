@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import sys
+import time
+import subprocess
+
+#ffmpeg -i example.mkv -c copy -an example-nosound.mkv
+def main():
+    n_of_arguments = len(sys.argv)
+    if n_of_arguments < 2:
+        exit(f"Must have at least 1 argument! {n_of_arguments-1} given.")
+
+    for file in sys.argv[1:]:
+        cmd = "ffmpeg -i -c copy -an".split()
+        cmd.insert(2, file)
+        cmd.append("NO AUDIO - " + file)
+
+        start = time.time()
+        print("\nRunning ffmpeg...\n")
+        subprocess.run(cmd)
+        end = time.time()
+        print(f"\nTime elapsed: {end - start:.2f} seconds")
+
+if __name__ == "__main__":
+    main()
