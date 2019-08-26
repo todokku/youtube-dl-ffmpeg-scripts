@@ -17,7 +17,7 @@ def main():
 
     f = open(txt , "w+")
     for i in range(n_of_arguments-1):
-        f.write("file '" + os.path.abspath(files[i]) + "' \n")
+        f.write("file '" + os.path.abspath(files[i]).replace("'", "\\'") + "' \n")
     f.close()
 
     cmd = "ffmpeg -f concat -safe 0 -i -c copy".split()
