@@ -14,9 +14,9 @@ def main():
     to = sys.argv[3]
 
     if to == "end":
-        cmd = f"ffmpeg -i -ss {from_} -async 1 -strict -2 "
+        cmd = f"ffmpeg -i -ss {from_} -async 1 -strict -2 -qscale 0"
     else:
-        cmd = f"ffmpeg -i -ss {from_} -to {to} -async 1 -strict -2"
+        cmd = f"ffmpeg -i -ss {from_} -to {to} -async 1 -strict -2 -qscale 0"
 
     cmd = cmd.split()
     cmd.insert(2, name)
@@ -30,16 +30,6 @@ def main():
     print(f"Time elapsed: {end - start:.2f} seconds")
 
 
-
-def ffmpeg_quiet(cmd):
-    if isinstance(cmd, str):
-        cmd = cmd + " -loglevel panic"
-        cmd = cmd + " -hide_banner"
-    else:
-        cmd.append("-loglevel")
-        cmd.append("panic")
-        cmd.append(" -hide_banner")
-    return cmd
 
 if __name__ == "__main__":
     main()
