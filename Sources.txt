@@ -41,3 +41,7 @@ Quieter ffmpeg:
 https://superuser.com/questions/326629/how-can-i-make-ffmpeg-be-quieter-less-verbose
 -loglevel panic -hide_banner
 
+
+
+Crop Video (Height/Width):
+https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-ffmpeg
