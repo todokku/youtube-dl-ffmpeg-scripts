@@ -13,7 +13,9 @@ def main():
     for file in sys.argv[1:]:
         cmd = "ffmpeg -i -c copy -an".split()
         cmd.insert(2, file)
-        cmd.append("NO AUDIO - " + file)
+        index = file.rfind("/") # last forward slash - file dir
+        output = file[:index+1] + "NO AUDIO - " + file[index+1:]
+        cmd.append(output)
 
         start = time.time()
         print("\nRunning ffmpeg...\n")
